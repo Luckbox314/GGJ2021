@@ -10,14 +10,16 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 10f;
     public Transform feet;
     public LayerMask groundLayers;
+    public float mayJump;
 
     private float movX;
-    private bool canJump = true;
 
     private void Update()
     {
         movX = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
+        IsGrounded();
+        mayJump -= Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.W) && mayJump > 0)
         {
             Jump();
         }
@@ -28,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movement = new Vector2(movX * movementSpeed, rb.velocity.y);
 
         rb.velocity = movement;
-
     }
 
     void Jump()
@@ -43,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (groundCheck != null)
         {
+            mayJump = 0.5f;
             return true;
         }
 
