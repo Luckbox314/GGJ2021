@@ -11,7 +11,7 @@ public class ToggleLightSources : MonoBehaviour
     [Header("La fuente de luz y sombras 2")]
     public GameObject luz2;
     public GameObject[] sombras2;
-    private bool lightState = false;
+    private bool lightState = true;
 
 
     private void Update()
