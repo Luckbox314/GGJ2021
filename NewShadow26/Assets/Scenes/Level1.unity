@@ -419,6 +419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sombra1
       objectReference: {fileID: 0}
+    - target: {fileID: 5675286016348888110, guid: c6e5874c22650e74982c32b51e2eefc8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e5874c22650e74982c32b51e2eefc8, type: 3}
 --- !u!1 &104676275
@@ -749,7 +753,7 @@ GameObject:
   - component: {fileID: 315885540}
   - component: {fileID: 315885542}
   - component: {fileID: 315885541}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sombra1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,6 +854,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &420838680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5675286016348888110, guid: c6e5874c22650e74982c32b51e2eefc8, type: 3}
+  m_PrefabInstance: {fileID: 67340342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &420838681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2234207678759440654, guid: c6e5874c22650e74982c32b51e2eefc8, type: 3}
@@ -1030,6 +1039,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
+  mayJump: 0
 --- !u!1 &489098019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,7 +3078,7 @@ MonoBehaviour:
   luces:
   - {fileID: 745424507}
   - {fileID: 2112116724}
-  sombraOriginal: {fileID: 0}
+  sombraOriginal: {fileID: 420838680}
 --- !u!4 &1443235037
 Transform:
   m_ObjectHideFlags: 0
@@ -3363,7 +3373,7 @@ GameObject:
   - component: {fileID: 1960924880}
   - component: {fileID: 1960924882}
   - component: {fileID: 1960924881}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sombra2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3582,6 +3592,10 @@ PrefabInstance:
     - target: {fileID: 5675286016348888110, guid: c6e5874c22650e74982c32b51e2eefc8, type: 3}
       propertyPath: m_Name
       value: Sombra2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675286016348888110, guid: c6e5874c22650e74982c32b51e2eefc8, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e5874c22650e74982c32b51e2eefc8, type: 3}
