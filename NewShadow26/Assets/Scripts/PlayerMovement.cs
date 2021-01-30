@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayers;
 
     private float movX;
+    private bool canJump = true;
 
     private void Update()
     {
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movement = new Vector2(movX * movementSpeed, rb.velocity.y);
 
         rb.velocity = movement;
+
     }
 
     void Jump()
