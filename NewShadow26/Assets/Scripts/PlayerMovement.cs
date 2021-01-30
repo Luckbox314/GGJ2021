@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (groundCheck != null)
         {
-            mayJump = 0.1f;
+            mayJump = 0.01f;
             return true;
         }
 
