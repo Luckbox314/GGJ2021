@@ -1,0 +1,27 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19041.746; Version 2004; 64bit' Language: 'es' Physical Memory: 12174 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+C:/Users/lucas/Desktop/Repos/Personal/GGJ2021/Shadow26
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+52716
+Successfully changed project path to: C:/Users/lucas/Desktop/Repos/Personal/GGJ2021/Shadow26
+C:/Users/lucas/Desktop/Repos/Personal/GGJ2021/Shadow26
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 2382.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.2f1 (068178b99f32)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/lucas/Desktop/Repos/Personal/GGJ2021/Shadow26/Assets
+GfxDevice: creating device client; threaded=0
