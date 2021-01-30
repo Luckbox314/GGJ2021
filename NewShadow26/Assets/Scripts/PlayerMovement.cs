@@ -11,8 +11,16 @@ public class PlayerMovement : MonoBehaviour
     public Transform feet;
     public LayerMask groundLayers;
     public float mayJump;
+    public float soundDelay;
 
     private float movX;
+
+    public AudioSource jump;
+
+    void Start()
+    {
+        jump = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -21,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         mayJump -= Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.W) && mayJump > 0)
         {
+            PlayJump();
             Jump();
         }
     }
@@ -49,5 +58,24 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void PlayJump()
+    {
+        jump.Play();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (IsGrounded() && soundDelay < 0)
+            {
+            soundDelay = 0.001f;
+            PlayJump();
+            soundDelay -= Time.deltaTime;
+        }
+        else
+        {
+            soundDelay -= Time.deltaTime;
+        }
     }
 }
