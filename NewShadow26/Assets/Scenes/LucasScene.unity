@@ -3731,6 +3731,7 @@ Transform:
   - {fileID: 2057314151}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2187181748304465628
 PrefabInstance:
@@ -3789,3 +3790,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8281ae8d0a619d4484de7be73958209, type: 3}
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> eeb9457407645c5c75f1cdb68200890de27913aa
