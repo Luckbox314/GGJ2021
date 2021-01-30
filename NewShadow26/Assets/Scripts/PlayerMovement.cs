@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform feet;
     public LayerMask groundLayers;
     public float mayJump;
+    public Transform spawn;
 
     private float movX;
 
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movX = Input.GetAxisRaw("Horizontal");
         IsGrounded();
-        mayJump -= Time.deltaTime;
+        
         if (Input.GetKeyDown(KeyCode.W) && mayJump > 0)
         {
             Jump();
@@ -27,9 +28,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        mayJump -= Time.deltaTime;
         Vector2 movement = new Vector2(movX * movementSpeed, rb.velocity.y);
 
         rb.velocity = movement;
+
+        if (IsInside()) {
+            rb.transform.position = spawn.position;
+        }
     }
 
     void Jump()
@@ -50,4 +56,16 @@ public class PlayerMovement : MonoBehaviour
 
         return false;
     }
+
+    public bool IsInside()
+    {
+        Collider2D hearthCheck = Physics2D.OverlapCircle(rb.transform.position, 0.2f, groundLayers);
+        if (hearthCheck != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 }
