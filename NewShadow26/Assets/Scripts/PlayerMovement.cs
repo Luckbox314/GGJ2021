@@ -8,14 +8,15 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     public float jumpForce = 10f;
-
+    public Transform feet;
+    public LayerMask groundLayers;
 
     private float movX;
 
     private void Update()
     {
         movX = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
         {
             Jump();
         }
@@ -32,5 +33,17 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
         rb.velocity = movement;
+    }
+
+    public bool IsGrounded()
+    {
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0.5f, groundLayers);
+
+        if (groundCheck != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
