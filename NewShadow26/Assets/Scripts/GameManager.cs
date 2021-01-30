@@ -1,8 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Door;
+    public static GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = this;
+
+    }
+    public void NextLevel(int level)
+    {
+
+        SceneManager.LoadScene(level);
+    }
+
 }
