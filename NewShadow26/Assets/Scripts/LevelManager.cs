@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
 
     public void Buttonclick(int levelButton){
+        levelButton += 1;
         GameObject levelSave = GameObject.Find("LevelSave");
         int maxLevelUnlocked = levelSave.GetComponent<LevelSave>().level;
         if(levelButton > maxLevelUnlocked){
