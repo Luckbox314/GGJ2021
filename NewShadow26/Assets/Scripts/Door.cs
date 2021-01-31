@@ -6,22 +6,33 @@ public class Door : MonoBehaviour
 {
     public int nextLevel;
     public AudioSource end;
+    public bool lockDoor = false;
 
     void Start()
     {
         end = GetComponent<AudioSource>();
     }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("sad");
-        GameObject levelSave = GameObject.Find("LevelSave");
-        int maxLevelUnlocked = levelSave.GetComponent<LevelSave>().level;
-        if(nextLevel > maxLevelUnlocked){
-            levelSave.GetComponent<LevelSave>().level = nextLevel;
+        if (!lockDoor)
+        {
+            GameObject levelSave = GameObject.Find("LevelSave");
+            int maxLevelUnlocked = levelSave.GetComponent<LevelSave>().level;
+            if (nextLevel > maxLevelUnlocked)
+            {
+                levelSave.GetComponent<LevelSave>().level = nextLevel;
+            }
+
+            GameManager.gameManager.NextLevel(nextLevel);
+            end.Play();
         }
         
-        GameManager.gameManager.NextLevel(nextLevel);
-        end.Play();
+    }
+
+    public void OpenDoor()
+    {
+
+        lockDoor = false;
     }
 }
