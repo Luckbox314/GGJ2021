@@ -24,11 +24,6 @@ public class Door : MonoBehaviour
                 levelSave.GetComponent<LevelSave>().level = nextLevel;
             }
 
-            if (nextLevel == 0)
-            {
-                levelSave.GetComponent<LevelSave>().level = 5;
-            }
-
             GameManager.gameManager.NextLevel(nextLevel + 1);
             //end.Play();
         }
@@ -41,3 +36,4 @@ public class Door : MonoBehaviour
         lockDoor = false;
     }
 }
+

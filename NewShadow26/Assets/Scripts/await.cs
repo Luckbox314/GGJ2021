@@ -16,6 +16,6 @@ public class await : MonoBehaviour
     IEnumerator LoadLevelAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Menu principal");
+        SceneManager.LoadScene(NewLevel);
     }
 }

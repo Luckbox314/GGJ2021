@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menu/Select level.unity
     guid: 342c643615062194c9bcd90ff7ebcdd0
+  - enabled: 1
+    path: Assets/Menu/FinalAnimation.unity
+    guid: 5b36f20c157ad8c48846e260b590f620
   m_configObjects: {}
