@@ -26,10 +26,10 @@ public class Door : MonoBehaviour
 
             if (nextLevel == 0)
             {
-                levelSave.GetComponent<LevelSave>().level = 4;
+                levelSave.GetComponent<LevelSave>().level = 5;
             }
 
-            GameManager.gameManager.NextLevel(nextLevel);
+            GameManager.gameManager.NextLevel(nextLevel + 1);
             //end.Play();
         }
         

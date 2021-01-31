@@ -7,7 +7,7 @@ public class LevelSave : MonoBehaviour
 {
     // Start is called before the first frame update
     public static LevelSave save;
-    public int level = 1;
+    public int level = 2;
 
     void Awake(){
 
