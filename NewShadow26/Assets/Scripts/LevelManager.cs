@@ -15,8 +15,8 @@ public class LevelManager : MonoBehaviour
         else{
             Debug.Log("cargando nivel");
 
-            string sceneName = "Level" + levelButton.ToString();
-            SceneManager.LoadScene(sceneName);
+            // string sceneName = "Level" + levelButton.ToString();
+            SceneManager.LoadScene(levelButton);
 
         }   
     }
