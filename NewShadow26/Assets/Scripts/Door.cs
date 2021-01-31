@@ -5,13 +5,13 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public int nextLevel;
-    public AudioSource end;
+    //public AudioSource end;
     public bool lockDoor = false;
 
-    void Start()
-    {
-        end = GetComponent<AudioSource>();
-    }
+    //void Start()
+    //{
+    //    end = GetComponent<AudioSource>();
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,8 +24,13 @@ public class Door : MonoBehaviour
                 levelSave.GetComponent<LevelSave>().level = nextLevel;
             }
 
+            if (nextLevel == 0)
+            {
+                levelSave.GetComponent<LevelSave>().level = 4;
+            }
+
             GameManager.gameManager.NextLevel(nextLevel);
-            end.Play();
+            //end.Play();
         }
         
     }
