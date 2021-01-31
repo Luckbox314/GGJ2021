@@ -10,8 +10,8 @@ public class MainMenuScenes : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
-    public void Descubre(){
-        SceneManager.LoadScene("Descubre");
+    public void SelectLevel(){
+        SceneManager.LoadScene("Select Level");
     }
 
 }
