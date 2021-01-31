@@ -15,6 +15,12 @@ public class Door : MonoBehaviour
         private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("sad");
+        GameObject levelSave = GameObject.Find("LevelSave");
+        int maxLevelUnlocked = levelSave.GetComponent<LevelSave>().level;
+        if(nextLevel > maxLevelUnlocked){
+            levelSave.GetComponent<LevelSave>().level = nextLevel;
+        }
+        
         GameManager.gameManager.NextLevel(nextLevel);
         end.Play();
     }
