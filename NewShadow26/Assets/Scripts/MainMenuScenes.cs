@@ -14,4 +14,10 @@ public class MainMenuScenes : MonoBehaviour
         SceneManager.LoadScene("Select Level");
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Game is exiting");
+    }
+
 }
