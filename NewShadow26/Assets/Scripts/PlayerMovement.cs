@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float mayJump;
     public float soundDelay;
     public Transform spawn;
+    public Animator animator;
+    private bool facingRight = true;
 
     private float movX;
 
@@ -31,18 +33,29 @@ public class PlayerMovement : MonoBehaviour
     {
         movX = Input.GetAxisRaw("Horizontal");
         IsGrounded();
-        
+
+        if (rb.velocity.x >= 0.1f) { facingRight = true; }
+        else if (rb.velocity.x <= -0.1f) { facingRight = false; }
+
+
         if (Input.GetKeyDown(KeyCode.W) && mayJump > 0)
         {
             jump.Play();
             Jump();
         }
+
+        animator.SetFloat("speedX", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("speedY", rb.velocity.y);
+        animator.SetBool("air", !IsGrounded());
     }
 
     private void FixedUpdate()
     {
         mayJump -= Time.deltaTime;
         Vector2 movement = new Vector2(movX * movementSpeed, rb.velocity.y);
+
+        if (facingRight) { gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 1);  }
+        if (!facingRight) { gameObject.transform.localScale = new Vector3(-0.75f, 0.75f, 1); }
 
         rb.velocity = movement;
 
