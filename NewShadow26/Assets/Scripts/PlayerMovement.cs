@@ -18,11 +18,15 @@ public class PlayerMovement : MonoBehaviour
 
     private float movX;
 
+    public AudioSource[] sounds;
     public AudioSource jump;
+    public AudioSource fall;
 
     void Start()
     {
-        jump = GetComponent<AudioSource>();
+        sounds = GetComponents<AudioSource>();
+        jump = sounds[0];
+        fall = sounds[1];
     }
 
     private void Update()
@@ -36,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) && mayJump > 0)
         {
-            PlayJump();
+            jump.Play();
             Jump();
         }
 
@@ -79,17 +83,12 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
-    public void PlayJump()
-    {
-        jump.Play();
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (IsGrounded() && soundDelay < 0)
             {
             soundDelay = 0.001f;
-            PlayJump();
+            fall.Play();
             soundDelay -= Time.deltaTime;
         }
         else
